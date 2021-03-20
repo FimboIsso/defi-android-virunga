@@ -1,6 +1,8 @@
 package com.issonet.virunga.models;
 
-public class donnees {
+import java.io.Serializable;
+
+public class donnees implements Serializable {
     private  int id;
     private String title,description;
     private int image_url;

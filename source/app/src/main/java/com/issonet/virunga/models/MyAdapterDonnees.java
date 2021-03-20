@@ -1,6 +1,7 @@
 package com.issonet.virunga.models;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.issonet.virunga.R;
+import com.issonet.virunga.detailImageActiviy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +50,13 @@ public class MyAdapterDonnees extends RecyclerView.Adapter<MyAdapterDonnees.MyVi
     public void onBindViewHolder(final MyViewHolderAMI myViewHolder, final int position) {
         final donnees myObject = listResult.get(position);
         myViewHolder.bind(myObject);
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, detailImageActiviy.class).putExtra("myObject",myObject));
+            }
+        });
 
     }
 
